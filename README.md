@@ -54,4 +54,4 @@ determinística lo recomendable es usar la interfaz IDisposable.
 Es posible invocar y controlar el Garbage Collector vía los métodos estáticos de la clase System.GC, pero no es recomendable ya que se activa para todas las aplicaciones que utilicen recursos en ese momento no únicamente para la aplicación que lo invoco, además que debemos de conocer los métodos no determinísticos para la liberación de memoria.
 A continuación la salida del programa
 </p>
-<img src="images/destructor.png">
+<img src="images/fig1.png">
