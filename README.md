@@ -5,12 +5,17 @@ En lenguajes orientados a objetos como C#,C++ o Java los objetos tienen un ciclo
 Por ejemplo con la palabra reservada new, llamamos al constructor de un
 objeto del tipo router:
 </p>
-<img src="images/RouterNew.png">
+<pre>
+Router router = new Router();
+</pre>
 <p align="justify">
 El uso de constructores es igual en C# como lo es en C++ y Java, donde sino especificamos el constructor, el compilador se encarga de crearlo ya que una de sus responsabilidades es la llamada a un constructor el cual como un estándar tomado de C++ el constructor tiene el mismo nombre que la clase.
 De igual forma la clase puede tener el constructor predeterminado sin argumentos, como un constructor personalizado, por ejemplo en el siguiente código:
 </p>
-<img src="images/TwoRouterNew.png">
+<pre>
+Router router = new Router("Cordoba");
+Router router2 = new Router("Monterrey", new byte[]{ 10, 3, 0, 0 });
+</pre>
 <p align="justify">
 En C# a diferencia de C++ existe el Garbage Collector (recolector de basura) que se encarga de destruir los objetos que fueron creados y ya no son utilizados, por lo que el programador no es responsable de liberar recursos asignando un destructor a cada objeto.
 </p>
@@ -19,11 +24,12 @@ Sin embargo hay casos en C# donde los destructores son necesarios para objetos q
 Los destructores a diferencia de los constructores no se heredan, no pueden recibir parámetros y no pueden sobrescribirse.
 La sintaxis de un destructor es con el mismo nombre que el constructor solo se agrega una ~ como prefijo, como se muestra en el siguiente código:
 </p>
-<img src="images/RouterClass.png">
-<p align="justify">
-A continuación el programa principal para ejemplificar los destructores
-</p>
-<img src="images/TestDestructors.png">
+<pre>
+~Router()
+{
+    Console.WriteLine("{0} Destruido {1}",Name, DateTime.Now);
+}
+</pre>
 <p align="justify">
 En este ejemplo el código dentro del destructor imprime un mensaje en la consola lo cual es algo trivial, esto es importante ya que en la mayoría de la documentación que hablan acerca de destructores en C# señalan que deben usarse con extremo cuidado.Hay ciertas reglas acerca de su uso:
 </p>
